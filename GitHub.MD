@@ -44,9 +44,13 @@ Host github.com
   IdentityFile ~/.ssh/sivakumarreddy.pem
 
 #techworldwithsiva
-Host github.com-anotheraccount
+Host github.com-t
   HostName github.com
   User git
   IdentityFile ~/.ssh/techworldwithsiva
 ```
 
+~ --> /c/Users/user
+
+#### below line tells you are referring to another github account
+git remote add origin git@github.com-t:sivadevopsdaws74s/concepts.git
