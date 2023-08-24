@@ -15,25 +15,25 @@ Before deploying the application we need to make the server ready. For example
 As a DevOps engineer we need to do this effectively. Basically CRUD over the server.
 
 Creation of configuration --> should be fast and accurate</br>
-Update the configuration --> any changes in configuration should be rolled out asap.
-Delete the configuration --> delete the configuration if not required.
-Read the configuration --> it is easy to read the configuration of server through ansible playbooks.
+Update the configuration --> any changes in configuration should be rolled out asap.</br>
+Delete the configuration --> delete the configuration if not required.</br>
+Read the configuration --> it is easy to read the configuration of server through ansible playbooks.</br>
 
 Earlier we were doing this manually or with shell scripting, but there are few disadvantages with shell script.
 
-1. Shell script is imperative
+1. Shell script is imperative</br>
     We need to provide the sequence of steps to the server. It's syntax is quite complex and sequence based.
-2. Shell script is homogenous.
+2. Shell script is homogenous.</br>
     shell script should be different if the OS distribution is changed.
 3. It can't scale to more servers.
 4. We need to validate each and every step.
 
 Ansible has following advantages over shell script.
-1. Shell script is declarative.
+1. Shell script is declarative.</br>
     Declarative means whatever we write we will get with simple syntax. It is ansible responsibility to maintain the state of the server i.e whatever we write Ansible should do that. Ansible syntax is easy.
-2. Ansible is heterogenous.
+2. Ansible is heterogenous.</br>
     Ansible can query the node OS distribution and can change the command.
-3. Ansible can scale to many servers.
+3. Ansible can scale to many servers.</br>
     Ansible can connect with group of servers and configure them.
 4. Ansible take care of validation and echo statements to the users.
 5. We can re use the code through the feature of roles.
