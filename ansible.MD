@@ -14,7 +14,7 @@ Before deploying the application we need to make the server ready. For example
 
 As a DevOps engineer we need to do this effectively. Basically CRUD over the server.
 
-Creation of configuration --> should be fast and accurate
+Creation of configuration --> should be fast and accurate</br>
 Update the configuration --> any changes in configuration should be rolled out asap.
 Delete the configuration --> delete the configuration if not required.
 Read the configuration --> it is easy to read the configuration of server through ansible playbooks.
