@@ -1,0 +1,27 @@
+{
+    "name": "sivakumar",
+    "dob": "07-07-017",
+    // this is address map, inside everything is key value pair
+    "address": {
+        "city": "hyd",
+        "country": "india"
+    }
+}
+
+{
+    "name": "sivakumar",
+    "dob": "07-07-017",
+    // this is address map, inside everything is key value pair
+    "address": [
+        {
+            "city": "hyd",
+            "country": "india",
+            "type": "current"
+        },
+        {
+            "city": "hyd",
+            "country": "india",
+            "type": "perm"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+<Person>
+    <Name>Sivakumar Reddy</Name>
+    <DOB>07-07-07</DOB>
+    <Address>
+        <PermAddress>
+            <Country>India</Country>
+            <City>HYD</City>
+        </PermAddress>
+        <CurrentAddress>
+            <Country>US</Country>
+            <City>California</City>
+        </CurrentAddress>
+    </Address>
+</Person>
