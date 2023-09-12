@@ -40,9 +40,9 @@ Ansible has following advantages over shell script.
 
 ### Pull vs Push configuration
 
-![alt text](pullvspush.jpg)
+![alt text](images/pullvspush.jpg)
 
-![alt text](push.jpg)
+![alt text](images/push.jpg)
 
 **PULL:**
 1. Nodes should connect to the servers through agent software.

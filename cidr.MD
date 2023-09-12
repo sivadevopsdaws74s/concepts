@@ -25,7 +25,7 @@ AWS cloud CIDR has following rules.
 * We can't choose network bits less than 16.
 * We can't choose network bits more than 28.
 
-![alt text](ip.jpg)
+![alt text](images/ip.jpg)
 
 #### What is Network?
 
@@ -34,4 +34,4 @@ N/W where we have a group of computers, servers or any computing devices. It bel
 We use to divide a network into smaller parts called subnets for better maintenance and security.
 
 
-![alt text](cidr.jpg)
+![alt text](images/cidr.jpg)

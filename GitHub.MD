@@ -28,7 +28,7 @@ Git is a popular distributed/decentralized control system.
 * Staging area is there where can selectively send the changes to the central repo. He can send completed changes and keep working on in-progress features.
 * Developers can work offline with local repos.
 
-![alt text](SVN.png)
+![alt text](images/SVN.png)
 
 ### SSH Authentication
 1. import the public key in github server
