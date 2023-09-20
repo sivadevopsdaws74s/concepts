@@ -138,12 +138,16 @@ curl localhost:9200
   "tagline" : "You Know, for Search"
 }
 ```
+6. Enable elasticsearch
+```
+systemctl enable elasticsearch
+```
 #### Kibana
 
 1. Install kibana
 
 ```
-yum install kibana
+yum install kibana -y
 ```
 
 2. Open the kibana config
@@ -154,3 +158,53 @@ vim /etc/kibana/kibana.yml
 * server.port: 5601
 * server.host: "0.0.0.0" keep the value as 0.0.0.0 so that we can open kibana from internet.
 * elasticsearch.hosts: ["http://localhost:9200"]
+
+3. Start and Enable kibana
+
+```
+systemctl restart kibana
+```
+
+```
+systemctl enable kibana
+```
+
+#### Logstash
+
+1. Install logstash
+
+```
+yum install logstash -y
+```
+
+2. Configure logstash input and output
+
+```
+vim /etc/logstash/conf.d/logstash.conf
+```
+
+```
+input {
+  beats {
+    port => 5044
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "%{[@metadata][beat]}-%{[@metadata][version]}"
+  }
+}
+
+```
+
+3. Start and Enable logstash
+
+```
+systemctl restart logstash
+```
+
+```
+systemctl enable logstash
+```
