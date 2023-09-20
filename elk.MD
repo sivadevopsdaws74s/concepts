@@ -91,16 +91,21 @@ type=rpm-md
 2. Install elasticsearch
 
 ```
-yum install elasticsearch
+yum install elasticsearch -y
 ```
 
 3. Open the elastic config file and make sure we uncomment
+```
+vim /etc/elasticsearch/elasticsearch.yml
+```
 
 * http.port: 9200
 * Give network host as 
 network.host: 0.0.0.0
 * Enter a line under discovery section
-* discovery.type: single-node
+```
+discovery.type: single-node
+```
 
 4. Restart elasticsearch
 
@@ -108,6 +113,31 @@ network.host: 0.0.0.0
 systemctl restart elasticsearch
 ```
 
+5. Test Elastic search
+```
+curl localhost:9200
+```
+
+**Sample Output:**
+```
+{
+  "name" : "ip-172-31-23-26.ec2.internal",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "S5rDTZXASMWuu60v1i6HrQ",
+  "version" : {
+    "number" : "7.17.13",
+    "build_flavor" : "default",
+    "build_type" : "rpm",
+    "build_hash" : "2b211dbb8bfdecaf7f5b44d356bdfe54b1050c13",
+    "build_date" : "2023-08-31T17:33:19.958690787Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.11.1",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
 #### Kibana
 
 1. Install kibana
