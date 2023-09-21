@@ -208,3 +208,28 @@ systemctl restart logstash
 ```
 systemctl enable logstash
 ```
+
+
+
+#### Grok filter
+
+'$remote_addr $time_local $status $request_time'
+
+input {
+  beats {
+    port => 5044
+  }
+}
+
+filter {
+    grok {
+      match => { "message" => "%{IP:client} %{HTTPDATE:timestamp} %{NUMBER:http_status:int} %{NUMBER:duration:float}" }
+    }
+  }
+
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "%{[@metadata][beat]}-%{[@metadata][version]}"
+  }
+}
