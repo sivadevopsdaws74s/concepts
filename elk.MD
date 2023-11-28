@@ -209,7 +209,48 @@ systemctl restart logstash
 systemctl enable logstash
 ```
 
+#### Filebeat
 
+1. Add the repo
+
+```
+vim /etc/yum.repos.d/elasticsearch.repo
+```
+
+```
+[elasticsearch]
+name=Elasticsearch repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+
+2. Install filebeat
+
+```
+yum install filebeat -y
+```
+
+3. Open the filebeat config
+
+```
+vim /etc/filebeat/filebeat.yml
+```
+
+- Set `enabled: true` under filebeat.inputs
+- Under paths: modify the log path to `/var/log/nginx/access.log`
+- Specify the elasticsearch IP address for the host variable under output.elasticsearch section
+
+4. Start filebeat service
+
+```
+systemctl start filebeat
+```
+
+- We can check whether the connection is established or not using `tail -f /var/log/messages` file
 
 #### Grok filter
 
